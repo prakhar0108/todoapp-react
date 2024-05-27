@@ -1,0 +1,21 @@
+$borderColor:rgb(115, 172, 160);
+
+.app{
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ background-color: $borderColor;
+}
+h1{
+    text-align: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+hr{
+    height: 20px;
+    width: 500px;  
+    color: rgb(59, 109, 98);
+}

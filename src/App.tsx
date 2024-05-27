@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import FormComponent from "./components/Form/Form";
+import { Todo } from "./components/todo/todo";
+import "./App.scss";
+
+interface OutputObj {
+  taskName: string;
+  category: string;
+  dueDate: string;
+  _id: string;
+  __v: number;
+}
+interface OutputArray {
+  todos: OutputObj[];
+}
 
 function App() {
+  const [todos, setTodos] = useState<OutputObj[]>([]);
+  useEffect(() => {
+    axios
+      .get("https://todoapp-backend31.herokuapp.com", {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => setTodos(response.data.toDoList));
+  }, []);
+  console.log("todos==", todos);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>TODO App</h1>
+      <FormComponent />
+      <Todo todos={todos} />
+
+      <hr />
     </div>
   );
 }

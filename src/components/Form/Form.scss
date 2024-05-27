@@ -1,0 +1,47 @@
+$backgroundColor:rgb(232, 193, 134);
+$borderColor:rgb(115, 172, 160);
+
+form {
+  display:flex;
+  flex-direction: column;
+  height: 200px;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+  background-color:$borderColor;
+} 
+#todo-input{
+  height: 50px;
+  width: 498px;
+  border:none  ;
+  background-color: $backgroundColor;
+  font-size: larger;
+}
+#date-category{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 500px;
+}
+#calendar-input{
+    height: 50px;
+    width: 250px;
+    border: none;
+    background-color: $backgroundColor;
+    font-size: larger;
+    
+}
+#select-dropdown{
+    height: 50px;
+    width: 250px;
+    border: none;
+    background-color: $backgroundColor;
+    font-size: larger;
+}
+#btn-submit{
+    height: 50px;
+    width: 200px;
+    background-color: $backgroundColor;
+    border: none;
+    font-size: large;
+}
